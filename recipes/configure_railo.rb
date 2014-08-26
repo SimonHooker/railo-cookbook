@@ -51,3 +51,7 @@ end
 directory config_dir do
   action :delete
 end
+
+execute 'restart tomcat' do
+  command "service tomcat#{node['tomcat']['base_version']} restart"
+end
